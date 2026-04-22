@@ -1,374 +1,231 @@
-* {
+*{
     box-sizing: border-box;
 }
-
 /* ESTILOS DEL CUERPO DE LA PÁGINA */
 body {
-    background: url('../img/imagen4.jpg') no-repeat center center fixed;
-    background-size: cover;
-    border: 30px solid #4375a6;
-    margin: 0;
-    min-height: 100vh;
-    background-color: #a4dbf0;
+    background-color: #a4dbf0;    
 }
 
 /* CONTENEDOR DEL MENÚ - Centra los elementos horizontalmente */
 .menu {
-    text-align: center;
+    text-align: center;  /* Centra el texto y elementos inline dentro del menú */
 }
 
 /* ESTILOS DEL TÍTULO SECUNDARIO (h2) */
 h2 {
-    font-family: 'Lucida Handwriting', cursive;
-    font-size: 48px;
-    text-align: center;
-    color: white;
-    margin-bottom: 30px;
-    text-shadow: 6px 6px 9px rgba(0, 0, 0, 0.6);
+    font-family: 'Lucida Handwriting', cursive;  /* Fuente cursiva elegante */
+    font-size: 48px;                              /* Tamaño de letra grande */
+    text-align: center;                           /* Centra el texto */
+    color: white;                                 /* Texto blanco */
+    margin-bottom: 30px;                          /* Espacio inferior de 30px */
+    text-shadow: 6px 6px 9px rgba(0, 0, 0, 0.6);  /* Sombra negra desplazada 6px hacia abajo/derecha con difuminado */
 }
 
 /* CLASE PARA ANIMAR LA SOMBRA DEL TEXTO (efecto danzante) */
 .shadow-dance {
-    animation: shadow-dance 1.5s infinite;
+  animation: shadow-dance 1.5s infinite;  /* Aplica animación que dura 1.5s y se repite infinitamente */
 }
 
-/* ANIMACIÓN: La sombra del texto cambia de color y posición */
+/* ANIMACIÓN: La sombra del texto cambia de color y posición (rojo → azul → rojo) */
 @keyframes shadow-dance {
-    0% { text-shadow: 2px 2px 5px red; }
-    50% { text-shadow: -2px -2px 5px blue; }
-    100% { text-shadow: 2px 2px 5px red; }
+  0% { text-shadow: 2px 2px 5px red; }      /* Inicio: sombra roja hacia abajo-derecha */
+  50% { text-shadow: -2px -2px 5px blue; }  /* Mitad: sombra azul hacia arriba-izquierda */
+  100% { text-shadow: 2px 2px 5px red; }    /* Final: vuelve a sombra roja */
 }
 
 /* ESTILOS BASE DE LOS BOTONES */
-button {
-    font-family: 'Papyrus', fantasy;
-    background-color: #7a1063;
-    color: white;
-    padding: 12px 24px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px 0;
-    width: 200px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+button { /*atributos del boton*/
+    font-family: 'Papyrus', fantasy;         /* Fuente con estilo de papiro/antiguo */
+    background-color: #7a1063;               /* Fondo morado oscuro */
+    color: white;                            /* Texto blanco */
+    padding: 12px 24px;                      /* Relleno interno: 12px arriba/abajo, 24px laterales */
+    font-size: 16px;                         /* Tamaño de fuente */
+    border: none;                            /* Sin borde */
+    border-radius: 5px;                      /* Bordes ligeramente redondeados */
+    cursor: pointer;                         /* Cursor tipo mano al pasar por encima */
+    margin: 5px 0;                           /* Margen vertical de 5px, horizontal 0 */
+    width: 200px;                            /* Ancho fijo de 200px */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transiciones suaves para tamaño y color */
 }
 
 /* EFECTO HOVER: Cuando el mouse pasa sobre el botón */
 button:hover {
-    transform: scale(1.06);
-    background-color: #721359;
+    transform: scale(1.06);      /* Aumenta tamaño un 6% */
+    background-color: #721359;   /* Cambia a un morado ligeramente más oscuro */
 }
 
 /* EFECTO ACTIVE: Cuando se hace clic en el botón */
 button:active {
-    background-color: #d337d1;
+    background-color: #d337d1;   /* Cambia a un rosa/morado más claro (efecto de presión) */
 }
 
 /* EFECTO NEÓN ESPECIAL (solo para botones con clase 'btn-neon') */
+/*para que el boton sea neon*/
 .btn-neon:hover {
-    background: #da15ac;
-    color: #fefffd;
-    box-shadow: 0 0 5px #6e205c,
+    background: #da15ac;          /* Fondo rosa intenso */
+    color: #fefffd;               /* Texto blanco */
+    box-shadow: 0 0 5px #6e205c,  /* Múltiples capas de sombra para crear efecto neón */
                 0 0 25px #e3b7da,
                 0 0 50px #ffcef3,
                 0 0 200px #ffe6f9;
 }
 
-/* ESTILOS PARA SPAN DENTRO DEL BOTÓN NEÓN */
+/* ESTILOS PARA SPAN DENTRO DEL BOTÓN NEÓN (posición absoluta no definida completamente) */
 .btn-neon span-neon {
-    position: absolute;
-    display: block;
+    position: absolute;  /* Posicionamiento absoluto respecto al contenedor con position relative */
+    display: block;      /* Se comporta como bloque (ocupa todo el ancho disponible) */
 }
 
-/* BOTONES CON ESTILO "VOLVER ATRÁS" */
+/* BOTONES CON ESTILO "VOLVER ATRÁS" (efecto vidrio/transparente) */
+/*botones de seleccion*/
 .buttons-back {
-    width: 220px;
-    padding: 12px 24px;
-    margin: 10px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: white;
-    background: rgba(255,255,255,0.1);
-    border: 2px solid white;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s;
+    width: 220px;                               /* Ancho fijo */
+    padding: 12px 24px;                         /* Relleno interno */
+    margin: 10px;                               /* Margen exterior */
+    font-size: 1.1rem;                          /* Tamaño de fuente ligeramente mayor */
+    font-weight: bold;                          /* Texto en negrita */
+    color: white;                               /* Texto blanco */
+    background: rgba(255,255,255,0.1);          /* Fondo blanco semi-transparente (10% opacidad) */
+    border: 2px solid white;                    /* Borde blanco sólido */
+    border-radius: 30px;                        /* Bordes muy redondeados (efecto píldora) */
+    cursor: pointer;                            /* Cursor tipo mano */
+    transition: all 0.3s;                       /* Transición suave para todas las propiedades */
 }
 
+/* Hover para botones de volver */
 .buttons-back:hover {
-    background: rgb(229, 226, 226);
-    color: #2b1055;
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    background: rgb(229, 226, 226);  /* Fondo gris claro */
+    color: #2b1055;                  /* Texto azul/morado oscuro */
+    transform: scale(1.05);          /* Aumenta tamaño 5% */
+    box-shadow: 0 0 20px rgba(255,255,255,0.5); /* Brillo blanco alrededor */
 }
 
+/* Active para botones de volver (efecto clic) */
 .buttons-back:active {
-    transform: scale(0.95);
+    transform: scale(0.95);  /* Reduce tamaño 5% al hacer clic */
 }
 
-/* CONTENEDOR TIPO CARTA */
+/* MEDIA QUERY: Pantallas de hasta 600px (móviles) */
+@media (max-width: 600px) {
+    h1 { font-size: 2rem; }                              /* Reduce tamaño del h1 */
+    .buttons-back { width: 180px; padding: 10px 20px; }  /* Botones más pequeños */
+}
+
+/* CONTENEDOR TIPO CARTA (estilo rosa/coral) */
+/*formato carta*/
 .recuadro {
-    text-align: justify;
-    font-size: 17px;
-    background-color: #F9BDC4;
-    color: #690914;
-    padding: 30px;
-    width: 90%;
-    max-width: 1000px;
-    display: block;
-    margin: 20px auto;
-    border-radius: 20px;
-    box-shadow: 0 20px 25px rgba(0,0,0,0.2);
+    text-align: justify;                    /* Texto justificado (alineado a ambos lados) */
+    font-size: 17px;                        /* Tamaño de fuente legible */
+    background-color: #F9BDC4;              /* Fondo rosa claro */
+    color: #690914;                         /* Texto rojo oscuro/burdeos */
+    padding: 30px;                          /* Relleno interno de 30px */
+    width: 90%;                             /* Ancho del 90% del contenedor padre */
+    max-width: 1000px;                      /* Ancho máximo de 1000px (no crece más) */
+    display: block;                         /* Se comporta como bloque */
+    margin: 20px auto;                      /* Margen vertical 20px, horizontal automático (centrado) */
+    border-radius: 20px;                    /* Bordes redondeados */
+    box-shadow: 0 20px 25px rgba(0,0,0,0.2); /* Sombra suave para dar profundidad */
 }
 
+/* CONTENEDOR TIPO CARTA (estilo azul) - similar al anterior pero con colores azules */
 .recuadro2 {
-    text-align: justify;
-    font-size: 17px;
-    background-color: #8bcef5;
-    color: #091b69;
-    padding: 30px;
-    width: 90%;
-    max-width: 1000px;
-    display: block;
-    margin: 20px auto;
-    border-radius: 20px;
-    box-shadow: 0 20px 25px rgba(0,0,0,0.2);
+    text-align: justify;                    /* Texto justificado */
+    font-size: 17px;                        /* Tamaño de fuente */
+    background-color: #8bcef5;              /* Fondo azul claro */
+    color: #091b69;                         /* Texto azul oscuro */
+    padding: 30px;                          /* Relleno interno */
+    width: 90%;                             /* Ancho relativo */
+    max-width: 1000px;                      /* Ancho máximo */
+    display: block;                         /* Bloque */
+    margin: 20px auto;                      /* Centrado horizontal */
+    border-radius: 20px;                    /* Bordes redondeados */
+    box-shadow: 0 20px 25px rgba(0,0,0,0.2); /* Sombra suave para dar profundidad */
 }
 
+/* CONTENEDOR FLEXIBLE para alinear elementos en fila */
 .contenedor {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+    display: flex;           /* Activa Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    gap: 5px;                /* Espacio de 5px entre elementos hijos */
 }
 
+/* ESTILOS PARA IMÁGENES */
+/* PRIMERA IMAGEN - desplazada hacia la derecha */
 .img1 {
-    position: relative;
-    right: -10px;
-    height: 600px;
+    position: relative;      /* Posicionamiento relativo (se mueve respecto a su lugar original) */
+    right: -10px;            /* Mueve la imagen 10px a la derecha (valor positivo con right = mover derecha) */
+    height: 600px;           /* Altura fija de 600px */
 }
 
+/* SEGUNDA IMAGEN - sin desplazamiento horizontal notable */
 .img2 {
-    position: relative;
-    width: 190px;
-    height: 600px;
+   position: relative;       /* Posicionamiento relativo */
+    width: 190px;            /* Ancho fijo de 190px */
+    height: 600px;           /* Altura fija de 600px */
 }
 
+/* TERCERA IMAGEN - desplazada hacia la izquierda */
 .img3 {
-    position: relative;
-    left: -10px;
-    width: 190px;
-    height: 600px;
+   position: relative;       /* Posicionamiento relativo */
+    left: -10px;             /* Mueve la imagen 10px a la izquierda */
+    width: 190px;            /* Ancho fijo */
+    height: 600px;           /* Altura fija */
 }
 
+/* IMAGEN DENTRO DE UNA CARTA (responsive) */
 .imagen-carta {
-    width: 90%;
-    max-width: 400px;
-    margin: 20px auto;
-    border-radius: 20px;
+    width: 90%;              /* Ancho del 90% del contenedor */
+    max-width: 400px;        /* Ancho máximo de 400px */
+    margin: 20px auto;       /* Margen vertical 20px, centrado horizontal */
+    border-radius: 20px;     /* Bordes redondeados */
 }
+
 
 .recuadro3 {
-    position: relative;
-    text-align: justify;
-    font-size: 17px;
-    background-color: #e7f58b;
-    color: #8d6717;
-    padding: 20px;
-    width: 20%;
-    height: 100px;
-    max-width: 1000px;
-    display: block;
-    align-items: right;
-    border-radius: 20px;
+    position: relative;       /* Posicionamiento relativo */
+    text-align: justify;                    /* Texto justificado */
+    font-size: 17px;                        /* Tamaño de fuente */
+    background-color: #e7f58b;              /* Fondo azul claro */
+    color: #8d6717;                         /* Texto azul oscuro */
+    padding: 20px;                          /* Relleno interno */
+    width: 20%;                             /* Ancho relativo */
+    height: 100px; 
+    max-width: 1000px;                      /* Ancho máximo */
+    display: block;                         /* Bloque   margin: 20px auto;   Centrado horizontal */
+    align-items: right;     /* Centra verticalmente */
+    border-radius: 20px;                    /* Bordes redondeados */
 }
-
 /* Contenedor principal que agrupa todas las filas de botones */
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
+    display: flex;           /* Activa Flexbox para layout flexible */
+    flex-direction: column;  /* Organiza los elementos hijos en columna (vertical) */
+    gap: 15px;              /* Espacio de 15px entre cada fila (hijo directo) */
+    padding: 20px;          /* Relleno interior de 20px en todos los lados */
 }
 
 /* Cada fila individual que contiene los botones */
 .row {
     display: flex;
+    justify-content: center;
     gap: 15px;
 }
 
+/* Estilos base para los botones (clase .button2) */
 .button2 {
-    padding: 12px 24px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease;
+    padding: 12px 24px;     /* Relleno: 12px arriba/abajo, 24px izquierda/derecha */
+    background-color: #3498db; /* Color de fondo azul */
+    color: white;           /* Texto de color blanco */
+    border: none;           /* Elimina el borde por defecto del botón */
+    border-radius: 5px;     /* Bordes ligeramente redondeados (5px) */
+    cursor: pointer;        /* Cambia el cursor a mano al pasar sobre el botón */
+    font-size: 16px;        /* Tamaño de fuente de 16px */
+    transition: all 0.3s ease; /* Transición suave para todas las propiedades (0.3 segundos) */
 }
 
+/* Efecto hover (al pasar el mouse) para botones con clase .button */
+/* NOTA: Esto afecta a .button, pero las clases definidas arriba son .button2 */
 .button:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
-}
-
-/* ============================================ */
-/* ESCALERA DE IZQUIERDA A DERECHA - VERSIÓN DESKTOP */
-/* ============================================ */
-.row-1 { margin-left: 290px; }
-.row-2 { margin-left: 390px; }
-.row-3 { margin-left: 490px; }
-.row-4 { margin-left: 590px; }
-.row-5 { margin-left: 690px; }
-
-/* ============================================ */
-/* MEDIA QUERIES - RESPONSIVE PARA LA ESCALERA */
-/* ============================================ */
-
-/* Pantallas de laptop (1200px en adelante) */
-@media (max-width: 1200px) {
-    .row-1 { margin-left: 200px; }
-    .row-2 { margin-left: 280px; }
-    .row-3 { margin-left: 360px; }
-    .row-4 { margin-left: 440px; }
-    .row-5 { margin-left: 520px; }
-}
-
-/* Pantallas de tablet horizontal (992px - 1200px) */
-@media (max-width: 992px) {
-    .row-1 { margin-left: 140px; }
-    .row-2 { margin-left: 200px; }
-    .row-3 { margin-left: 260px; }
-    .row-4 { margin-left: 320px; }
-    .row-5 { margin-left: 380px; }
-    
-    h2 {
-        font-size: 40px;
-    }
-}
-
-/* Pantallas de tablet vertical (768px - 992px) */
-@media (max-width: 768px) {
-    body {
-        border-width: 20px;
-    }
-    
-    .row-1 { margin-left: 80px; }
-    .row-2 { margin-left: 120px; }
-    .row-3 { margin-left: 160px; }
-    .row-4 { margin-left: 200px; }
-    .row-5 { margin-left: 240px; }
-    
-    button {
-        width: 180px;
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-    
-    h2 {
-        font-size: 36px;
-    }
-    
-    .container {
-        gap: 12px;
-    }
-}
-
-/* Pantallas de móvil grande (576px - 768px) */
-@media (max-width: 576px) {
-    body {
-        border-width: 15px;
-    }
-    
-    .row-1 { margin-left: 30px; }
-    .row-2 { margin-left: 60px; }
-    .row-3 { margin-left: 90px; }
-    .row-4 { margin-left: 120px; }
-    .row-5 { margin-left: 150px; }
-    
-    button {
-        width: 160px;
-        padding: 8px 16px;
-        font-size: 13px;
-    }
-    
-    h2 {
-        font-size: 30px;
-        margin-bottom: 20px;
-    }
-    
-    .container {
-        gap: 10px;
-        padding: 15px;
-    }
-}
-
-/* Pantallas de móvil pequeño (480px - 576px) */
-@media (max-width: 480px) {
-    body {
-        border-width: 10px;
-    }
-    
-    .row-1 { margin-left: 10px; }
-    .row-2 { margin-left: 30px; }
-    .row-3 { margin-left: 50px; }
-    .row-4 { margin-left: 70px; }
-    .row-5 { margin-left: 90px; }
-    
-    button {
-        width: 140px;
-        padding: 8px 12px;
-        font-size: 12px;
-    }
-    
-    h2 {
-        font-size: 26px;
-    }
-}
-
-/* Pantallas muy pequeñas (menos de 400px) - La escalera se reduce al mínimo */
-@media (max-width: 400px) {
-    .row-1 { margin-left: 0px; }
-    .row-2 { margin-left: 10px; }
-    .row-3 { margin-left: 20px; }
-    .row-4 { margin-left: 30px; }
-    .row-5 { margin-left: 40px; }
-    
-    button {
-        width: 130px;
-        padding: 6px 10px;
-        font-size: 11px;
-    }
-    
-    h2 {
-        font-size: 22px;
-    }
-    
-    .container {
-        gap: 8px;
-        padding: 10px;
-    }
-}
-
-/* Pantallas extra pequeñas (menos de 360px) - Los botones se centran */
-@media (max-width: 360px) {
-    .row {
-        justify-content: center;
-    }
-    
-    .row-1, .row-2, .row-3, .row-4, .row-5 {
-        margin-left: 0;
-    }
-    
-    button {
-        width: 120px;
-        font-size: 10px;
-        padding: 6px 8px;
-    }
-    
-    h2 {
-        font-size: 20px;
-    }
+    background-color: #2980b9; /* Cambia el fondo a un azul más oscuro */
+    transform: translateY(-2px); /* Eleva el botón 2px hacia arriba (efecto flotante) */
 }
