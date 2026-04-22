@@ -1,0 +1,141 @@
+/* Selector universal: aplica estos estilos a los elementos del HTML */
+* {
+    margin: 0;          /* Elimina el margen exterior por defecto */
+    padding: 0;         /* Elimina el relleno interior por defecto */
+    box-sizing: border-box; /* Hace que el ancho/alto incluyan bordes y relleno, no solo el contenido */
+}
+
+/* Estilos para el fondo animado del cuerpo de la página */
+body {
+    /* Gradiente lineal con múltiples colores que se mueve de izquierda a derecha (270deg) */
+    background: linear-gradient(270deg, #fa8585, #43e7dc, #3e9db2,#fd6fec, #9dd53c, #f6d365);
+    background-size: 800% 800%;  /* Hace el gradiente más grande para permitir el desplazamiento */
+    animation: gradientShift 10s ease infinite; /* Aplica la animación: 10s de duración, aceleración suave, infinita */
+    min-height: 100vh;  /* Altura mínima = 100% del viewport (pantalla visible) */
+}
+
+/* Definición de la animación del gradiente (desplazamiento de colores) */
+@keyframes gradientShift {
+    0% {   /* Al inicio de la animación */
+        background-position: 0% 50%;  /* Gradiente comenzando en la posición izquierda */
+    }
+    50% {  /* A la mitad de la animación */
+        background-position: 100% 50%; /* Gradiente desplazado a la derecha */
+    }
+    100% { /* Al final de la animación (vuelve al inicio) */
+        background-position: 0% 50%;   /* Regresa a la posición izquierda */
+    }
+}
+
+/* Estilos para el título principal h1 */
+h1 {
+    animation: fadeIn 1.5s ease-in-out;  /* Aplica animación de aparición gradual: 1.5s, entrada/salida suave */
+    font-family: "Latin Modern Roman";   /* Fuente tipográfica */
+    font-style: italic;                  /* Estilo cursiva/italic */
+    font-size: 35px;                     /* Tamaño de letra */
+    text-align: center;                  /* Centrado horizontal */
+    padding: 20px 0;                     /* Relleno: 20px arriba/abajo, 0 izquierda/derecha */
+    color: rgb(255, 255, 255);           /* Color blanco para el texto */
+    text-shadow: 6px 10px 9px #063c48;   /* Sombra: 6px derecha, 10px abajo, 9px difuminado, color verde oscuro */
+}
+
+/* Definición de la animación de aparición gradual (fade in) */
+@keyframes fadeIn {
+    from {   /* Estado inicial */
+        opacity: 0;  /* Completamente transparente */
+    }
+    to {     /* Estado final */
+        opacity: 1;  /* Completamente opaco/visible */
+    }
+}
+
+/* Contenedor principal de la galería de imágenes */
+.gallery {
+    max-width: 1200px;                 /* Ancho máximo del contenedor */
+    margin: 0 auto;                    /* Centrado horizontal automático */
+    display: grid;                     /* Usa CSS Grid para el layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño (fracción 1) */
+    grid-template-rows: 250px;         /* Altura fija de 250px para las filas */
+    grid-gap: 20px;                    /* Espacio de 20px entre celdas del grid */
+    padding: 100px 0;                  /* Relleno: 100px arriba/abajo, 0 laterales */
+}
+
+/* Estilos para las imágenes dentro de las cajas (.box) */
+.box img {
+    width: 100%;                       /* Ancho completo del contenedor */
+    height: 100%;                      /* Alto completo del contenedor */
+    object-fit: cover;                 /* La imagen cubre el área sin deformarse (recorta si es necesario) */
+    border-radius: 15px;               /* Bordes redondeados de 15px */
+    transition: transform 0.3s ease;   /* Transición suave para la propiedad transform (0.3 segundos) */
+}
+
+/* Efecto hover (al pasar el mouse) sobre las imágenes */
+.box img:hover {
+    transform: scale(1.05);            /* Escala la imagen un 5% más grande */
+}
+
+/* Estilo específico para la primera caja (.box:nth-child(1)) */
+.box:nth-child(1) {
+    grid-column-start: span 2;         /* Ocupa 2 columnas en lugar de 1 */
+}
+
+/* Estilo específico para la cuarta caja */
+.box:nth-child(4) {
+    grid-column-start: span 2;         /* Ocupa 2 columnas en lugar de 1 */
+}
+
+/* Nota: La siguiente línea está duplicada, repite la misma regla para .box:nth-child(4) */
+.box:nth-child(4) {
+    grid-column-start: span 2;         /* (Regla duplicada - sin efecto adicional) */
+}
+
+/* Media query para pantallas con ancho máximo de 990px (diseño responsive) */
+@media(max-width:990px) {
+    .container {                       /* Nota: Esto afecta a .container, pero no está definido antes en el CSS */
+        padding: 30px;                 /* Reduce el relleno a 30px */
+        grid-template-columns: repeat(1, 1fr); /* Cambia a 1 sola columna */
+    }
+}
+
+/* Sobrescribe el estilo de la primera caja en pantallas pequeñas */
+.box:nth-child(1) {
+    grid-column-start: span 1;         /* Ahora ocupa solo 1 columna (en lugar de 2) */
+}
+
+/* Sobrescribe el estilo de la cuarta caja en pantallas pequeñas */
+.box:nth-child(4) {
+    grid-column-start: span 1;         /* Ahora ocupa solo 1 columna (en lugar de 2) */
+}
+
+/* Estilos para el contenedor del botón de volver (al final del contenido) */
+.back-button {
+    text-align: right;                 /* Alineación a la derecha (cambiado de center) */
+    margin: 50px 30px 30px 0;          /* Márgenes: 50px arriba, 30px derecha, 30px abajo, 0 izquierda */
+}
+
+/* Estilos para el botón dentro de .back-button */
+.back-button button {
+    background: linear-gradient(135deg, #1ca0a7, #85e6fc); /* Gradiente diagonal de verde-azul a celeste */
+    color: white;                      /* Texto blanco */
+    text-align: right;                 /* Texto alineado a la derecha */
+    border: none;                      /* Sin borde */
+    border-radius: 50px;               /* Bordes muy redondeados (efecto píldora) */
+    padding: 12px 24px;                /* Relleno: 12px arriba/abajo, 24px laterales */
+    font-size: 16px;                   /* Tamaño de letra */
+    cursor: pointer;                   /* Cambia el cursor a mano al pasar sobre el botón */
+    font-family: 'Lucida Handwriting', cursive; /* Fuente cursiva/manuscrita */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra: desplazamiento 0/4px, difuminado 15px, negro 20% opaco */
+    transition: all 0.3s ease;         /* Transición suave para TODAS las propiedades modificables */
+}
+
+/* Efecto hover (al pasar el mouse) para el botón */
+.back-button button:hover {
+    transform: scale(1.05);            /* Se agranda un 5% */
+    background: linear-gradient(135deg, #5347ff, #7c86b8); /* Cambia a gradiente azul-violáceo */
+    box-shadow: 0 6px 20px rgba(138, 74, 74, 0.3); /* Sombra más grande y rojiza */
+}
+
+/* Efecto active (cuando se hace clic en el botón) */
+.back-button button:active {
+    transform: scale(0.95);            /* Se reduce un 5% (efecto de presión) */
+}

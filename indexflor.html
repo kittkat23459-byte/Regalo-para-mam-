@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flower</title>
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/reset-2.0.min.css">
+<link rel="stylesheet" href="css/stylef.css">
+<link rel="icon" href="img/Pink rose.jpg" type="image/x-icon" />
+
+</head>
+<body>
+<div id="main-content">
+  <div class="container" id="start-btn-container" style="display:none;">
+    <button id="start-btn" class="button"></button>
+</div>
+  <audio src="musica/te_voy_a_decir_una_cosa.mp3" autoplay></audio>
+  <canvas id="galaxy-canvas" style="display:none;opacity:0;will-change:opacity;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:10;"></canvas>
+  <div class="wrapper" style="display:none;">
+      <div class="flower"></div>
+  </div>
+  <div class="flower-message" style="display:none;"></div>
+</div>
+<style>
+/* Eliminado keyframes spin: no se usa loader */
+</style>
+<!-- partial -->
+<script src="js/main2.js" defer></script>
+/*boton para volver atrás*/
+ <div class="back-button">
+      <button onclick="goBack()">← Volver Atrás</button>
+    </div>
+
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><!-- Compatibilidad con navegadores antiguos (Edge/IE) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hace que la página sea responsive en móviles: 
+         - width=device-width: ancho igual al de la pantalla
+         - initial-scale=1.0: zoom inicial normal -->
+    <link rel="stylesheet" href="css/mainn.css">
+    <link rel="icon" href="img/girasol.jpg" type="image/x-icon">
+    <title>Flower</title>
+</head>
+
+<body class="container"><!-- Clase "container" para aplicar estilos específicos -->
+
+    <!-- REPRODUCTOR DE AUDIO -->
+    <audio src="sound/Ese que me dio la vida - Alejandro Sanz (youtube).mp3" autoplay></audio>
+
+    <!-- CONTENEDOR PARA LETRAS DE CANCIÓN (actualmente vacío) -->
+    <div></div>
+
+    <h1 class="titulo">
+        Estas flores amarillas son un reflejo de la alegría que traes a mi vida.
+        <br><br> 
+        Gracias por iluminar mis días con tu presencia.
+    </h1>
+
+    <!-- CAPA DE NOCHE (efecto de fondo oscuro) -->
+    <div class="night"></div>
+
+    <!-- CONTENEDOR PRINCIPAL DE FLORES (escena completa) -->
+    <div class="flowers">
+
+        <!-- ========== FLOR 1 ========== -->
+        <div class="flower flower--1">
+            <!-- PÉTALOS DE LA FLOR -->
+            <div class="flower__leafs flower__leafs--1">
+                <!-- Cada div representa un pétalo individual -->
+                <div class="flower__leaf flower__leaf--1"></div>
+                <div class="flower__leaf flower__leaf--2"></div>
+                <div class="flower__leaf flower__leaf--3"></div>
+                <div class="flower__leaf flower__leaf--4"></div>
+                <!-- Centro blanco de la flor -->
+                <div class="flower__white-circle"></div>
+
+                <!-- EFECTOS DE LUZ/RESPLANDOR en los pétalos (8 puntos de luz) -->
+                <div class="flower__light flower__light--1"></div>
+                <div class="flower__light flower__light--2"></div>
+                <div class="flower__light flower__light--3"></div>
+                <div class="flower__light flower__light--4"></div>
+                <div class="flower__light flower__light--5"></div>
+                <div class="flower__light flower__light--6"></div>
+                <div class="flower__light flower__light--7"></div>
+                <div class="flower__light flower__light--8"></div>
+            </div>
+            <!-- TALLO DE LA FLOR -->
+            <div class="flower__line">
+                <!-- Hojas pequeñas en el tallo -->
+                <div class="flower__line__leaf flower__line__leaf--1"></div>
+                <div class="flower__line__leaf flower__line__leaf--2"></div>
+                <div class="flower__line__leaf flower__line__leaf--3"></div>
+                <div class="flower__line__leaf flower__line__leaf--4"></div>
+                <div class="flower__line__leaf flower__line__leaf--5"></div>
+                <div class="flower__line__leaf flower__line__leaf--6"></div>
+            </div>
+        </div>
+
+        <!-- ========== FLOR 2 ========== -->
+        <div class="flower flower--2">
+            <!-- Pétalos de la flor 2 -->
+            <div class="flower__leafs flower__leafs--2">
+                <div class="flower__leaf flower__leaf--1"></div>
+                <div class="flower__leaf flower__leaf--2"></div>
+                <div class="flower__leaf flower__leaf--3"></div>
+                <div class="flower__leaf flower__leaf--4"></div>
+                <div class="flower__white-circle"></div>
+
+                <!-- Luces/resplandores -->
+                <div class="flower__light flower__light--1"></div>
+                <div class="flower__light flower__light--2"></div>
+                <div class="flower__light flower__light--3"></div>
+                <div class="flower__light flower__light--4"></div>
+                <div class="flower__light flower__light--5"></div>
+                <div class="flower__light flower__light--6"></div>
+                <div class="flower__light flower__light--7"></div>
+                <div class="flower__light flower__light--8"></div>
+            </div>
+            <!-- Tallo flor 2 -->
+            <div class="flower__line">
+                <div class="flower__line__leaf flower__line__leaf--1"></div>
+                <div class="flower__line__leaf flower__line__leaf--2"></div>
+                <div class="flower__line__leaf flower__line__leaf--3"></div>
+                <div class="flower__line__leaf flower__line__leaf--4"></div>
+            </div>
+        </div>
+
+        <!-- ========== FLOR 3 ========== -->
+        <div class="flower flower--3">
+            <!-- Pétalos de la flor 3 -->
+            <div class="flower__leafs flower__leafs--3">
+                <div class="flower__leaf flower__leaf--1"></div>
+                <div class="flower__leaf flower__leaf--2"></div>
+                <div class="flower__leaf flower__leaf--3"></div>
+                <div class="flower__leaf flower__leaf--4"></div>
+                <div class="flower__white-circle"></div>
+
+                <!-- Luces/resplandores -->
+                <div class="flower__light flower__light--1"></div>
+                <div class="flower__light flower__light--2"></div>
+                <div class="flower__light flower__light--3"></div>
+                <div class="flower__light flower__light--4"></div>
+                <div class="flower__light flower__light--5"></div>
+                <div class="flower__light flower__light--6"></div>
+                <div class="flower__light flower__light--7"></div>
+                <div class="flower__light flower__light--8"></div>
+            </div>
+            <!-- Tallo flor 3 -->
+            <div class="flower__line">
+                <div class="flower__line__leaf flower__line__leaf--1"></div>
+                <div class="flower__line__leaf flower__line__leaf--2"></div>
+                <div class="flower__line__leaf flower__line__leaf--3"></div>
+                <div class="flower__line__leaf flower__line__leaf--4"></div>
+            </div>
+        </div>
+
+        <!-- TALLO LARGO PRINCIPAL (con animación de crecimiento) -->
+        <div class="grow-ans" style="--d: 1.2s">
+            <!-- Variable CSS --d define la duración de animación (1.2 segundos) -->
+            <div class="flower__g-long">
+                <div class="flower__g-long__top"></div>   <!-- Parte superior del tallo -->
+                <div class="flower__g-long__bottom"></div> <!-- Parte inferior -->
+            </div>
+        </div>
+
+        <!-- ========== PASTO / HIERBA 1 ========== -->
+        <div class="growing-grass">
+            <div class="flower__grass flower__grass--1">
+                <div class="flower__grass--top"></div>
+                <div class="flower__grass--bottom"></div>
+                <!-- Hojas de pasto (8 hojas) -->
+                <div class="flower__grass__leaf flower__grass__leaf--1"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--2"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--3"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--4"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--5"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--6"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--7"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--8"></div>
+                <div class="flower__grass__overlay"></div> <!-- Capa superpuesta para efecto -->
+            </div>
+        </div>
+
+        <!-- ========== PASTO / HIERBA 2 ========== -->
+        <div class="growing-grass">
+            <div class="flower__grass flower__grass--2">
+                <div class="flower__grass--top"></div>
+                <div class="flower__grass--bottom"></div>
+                <!-- Hojas de pasto -->
+                <div class="flower__grass__leaf flower__grass__leaf--1"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--2"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--3"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--4"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--5"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--6"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--7"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--8"></div>
+                <div class="flower__grass__overlay"></div>
+            </div>
+        </div>
+
+        <!-- RAMAS DERECHAS (con hojas) -->
+        <div class="grow-ans" style="--d: 2.4s">
+            <div class="flower__g-right flower__g-right--1">
+                <div class="leaf"></div> <!-- Hoja decorativa -->
+            </div>
+        </div>
+
+        <div class="grow-ans" style="--d: 2.8s">
+            <div class="flower__g-right flower__g-right--2">
+                <div class="leaf"></div>
+            </div>
+        </div>
+
+        <!-- RAMAS FRONTALES (con múltiples hojas) -->
+        <div class="grow-ans" style="--d: 2.8s">
+            <div class="flower__g-front">
+                <!-- 8 pares de hojas frontales -->
+                <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--1">
+                    <div class="flower__g-front__leaf"></div>
+                </div>
+                <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--2">
+                    <div class="flower__g-front__leaf"></div>
+                </div>
+                <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--3">
+                    <div class="flower__g-front__leaf"></div>
+                </div>
+                <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--4">
+                    <div class="flower__g-front__leaf"></div>
+                </div>
+                <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--5">
+                    <div class="flower__g-front__leaf"></div>
+                </div>
+                <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--6">
+                    <div class="flower__g-front__leaf"></div>
+                </div>
+                <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--7">
+                    <div class="flower__g-front__leaf"></div>
+                </div>
+                <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--8">
+                    <div class="flower__g-front__leaf"></div>
+                </div>
+                <div class="flower__g-front__line"></div> <!-- Línea central -->
+            </div>
+        </div>
+
+        <!-- RAMAS FRONTALES SECUNDARIAS -->
+        <div class="grow-ans" style="--d: 3.2s">
+            <div class="flower__g-fr">
+                <div class="leaf"></div>
+                <!-- 8 hojas adicionales -->
+                <div class="flower__g-fr__leaf flower__g-fr__leaf--1"></div>
+                <div class="flower__g-fr__leaf flower__g-fr__leaf--2"></div>
+                <div class="flower__g-fr__leaf flower__g-fr__leaf--3"></div>
+                <div class="flower__g-fr__leaf flower__g-fr__leaf--4"></div>
+                <div class="flower__g-fr__leaf flower__g-fr__leaf--5"></div>
+                <div class="flower__g-fr__leaf flower__g-fr__leaf--6"></div>
+                <div class="flower__g-fr__leaf flower__g-fr__leaf--7"></div>
+                <div class="flower__g-fr__leaf flower__g-fr__leaf--8"></div>
+            </div>
+        </div>
+
+        <!-- ========== TALLOS LARGOS CON HOJAS (8 grupos) ========== -->
+        
+        <!-- Grupo 0 -->
+        <div class="long-g long-g--0">
+            <div class="grow-ans" style="--d: 3s"><div class="leaf leaf--0"></div></div>
+            <div class="grow-ans" style="--d: 2.2s"><div class="leaf leaf--1"></div></div>
+            <div class="grow-ans" style="--d: 3.4s"><div class="leaf leaf--2"></div></div>
+            <div class="grow-ans" style="--d: 3.6s"><div class="leaf leaf--3"></div></div>
+        </div>
+
+        <!-- Grupo 1 -->
+        <div class="long-g long-g--1">
+            <div class="grow-ans" style="--d: 3.6s"><div class="leaf leaf--0"></div></div>
+            <div class="grow-ans" style="--d: 3.8s"><div class="leaf leaf--1"></div></div>
+            <div class="grow-ans" style="--d: 4s"><div class="leaf leaf--2"></div></div>
+            <div class="grow-ans" style="--d: 4.2s"><div class="leaf leaf--3"></div></div>
+        </div>
+
+        <!-- Grupo 2 -->
+        <div class="long-g long-g--2">
+            <div class="grow-ans" style="--d: 4s"><div class="leaf leaf--0"></div></div>
+            <div class="grow-ans" style="--d: 4.2s"><div class="leaf leaf--1"></div></div>
+            <div class="grow-ans" style="--d: 4.4s"><div class="leaf leaf--2"></div></div>
+            <div class="grow-ans" style="--d: 4.6s"><div class="leaf leaf--3"></div></div>
+        </div>
+
+        <!-- Grupo 3 -->
+        <div class="long-g long-g--3">
+            <div class="grow-ans" style="--d: 4s"><div class="leaf leaf--0"></div></div>
+            <div class="grow-ans" style="--d: 4.2s"><div class="leaf leaf--1"></div></div>
+            <div class="grow-ans" style="--d: 3s"><div class="leaf leaf--2"></div></div>
+            <div class="grow-ans" style="--d: 3.6s"><div class="leaf leaf--3"></div></div>
+        </div>
+
+        <!-- Grupo 4 -->
+        <div class="long-g long-g--4">
+            <div class="grow-ans" style="--d: 4s"><div class="leaf leaf--0"></div></div>
+            <div class="grow-ans" style="--d: 4.2s"><div class="leaf leaf--1"></div></div>
+            <div class="grow-ans" style="--d: 3s"><div class="leaf leaf--2"></div></div>
+            <div class="grow-ans" style="--d: 3.6s"><div class="leaf leaf--3"></div></div>
+        </div>
+
+        <!-- Grupo 5 -->
+        <div class="long-g long-g--5">
+            <div class="grow-ans" style="--d: 4s"><div class="leaf leaf--0"></div></div>
+            <div class="grow-ans" style="--d: 4.2s"><div class="leaf leaf--1"></div></div>
+            <div class="grow-ans" style="--d: 3s"><div class="leaf leaf--2"></div></div>
+            <div class="grow-ans" style="--d: 3.6s"><div class="leaf leaf--3"></div></div>
+        </div>
+
+        <!-- Grupo 6 -->
+        <div class="long-g long-g--6">
+            <div class="grow-ans" style="--d: 4.2s"><div class="leaf leaf--0"></div></div>
+            <div class="grow-ans" style="--d: 4.4s"><div class="leaf leaf--1"></div></div>
+            <div class="grow-ans" style="--d: 4.6s"><div class="leaf leaf--2"></div></div>
+            <div class="grow-ans" style="--d: 4.8s"><div class="leaf leaf--3"></div></div>
+        </div>
+
+        <!-- Grupo 7 -->
+        <div class="long-g long-g--7">
+            <div class="grow-ans" style="--d: 3s"><div class="leaf leaf--0"></div></div>
+            <div class="grow-ans" style="--d: 3.2s"><div class="leaf leaf--1"></div></div>
+            <div class="grow-ans" style="--d: 3.5s"><div class="leaf leaf--2"></div></div>
+            <div class="grow-ans" style="--d: 3.6s"><div class="leaf leaf--3"></div></div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS DE JAVASCRIPT -->
+    <script src="js/anim.js"></script>
+    <!-- Archivo con animaciones adicionales (probablemente controla las clases .grow-ans) -->
+    <script src="js/main.js"></script>
+    <!-- Archivo principal con funcionalidades (posiblemente maneja el audio o interacciones) -->
+
+    <div class="back-button">
+      <button onclick="goBack()">← Volver Atrás</button>
+    </div>
+
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+/* ============================================ */
+/* ESTILOS GENERALES */
+/* ============================================ */
+body {
+    font-family: 'Poppins', sans-serif;  /* Define la fuente principal (cursiva elegante) */
+    background: linear-gradient(135deg, #226e8c, #1a4d63); /* Fondo degradado más dinámico */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px;
+}
+
+/* Contenedor principal */
+.container {
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* ============================================ */
+/* TÍTULO ANIMADO                        */
+/* ============================================ */
+.game-title {
+    font-size: 48px;
+    color: #ffd700;
+    text-shadow: 
+        4px 4px 0 #ff6600,
+        8px 8px 0 #cc3300;
+    animation: titlePulse 1.5s ease-in-out infinite;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+@keyframes titlePulse {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 4px 4px 0 #ff6600, 8px 8px 0 #cc3300;
+    }
+    50% {
+        transform: scale(1.05);
+        text-shadow: 6px 6px 0 #ffaa00, 12px 12px 0 #ff6600;
+    }
+}
+
+/* Subtítulo */
+.subtitle {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================ */
+/* CONTENEDOR DE TARJETAS (3 en fila)           */
+/* ============================================ */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;  /* Para que sea responsive */
+    margin-top: 20px;
+}
+
+/* Tarjeta individual */
+.game-card {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 25px;
+    width: 280px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+/* ============================================ */
+/* IMAGEN (Arriba del botón)                    */
+/* ============================================ */
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.game-card:hover .image-overlay {
+    opacity: 1;
+}
+
+/* ============================================ */
+/* BOTÓN PIXEL */
+/* ============================================ */
+.pixel-btn {
+    background: #4a4a4a;
+    border: none;
+    box-shadow: -4px 4px 0 #2a2a2a, -8px 8px 0 #1a1a1a;
+    color: white;
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 25px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 15px 0;
+    width: 100%;
+}
+
+/* Efecto al presionar */
+.pixel-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: -2px 2px 0 #2a2a2a, -4px 4px 0 #1a1a1a;
+}
+
+/* Hover */
+.pixel-btn:hover {
+    background: #5a5a5a;
+    transform: translate(-2px, -2px);
+    box-shadow: -6px 6px 0 #2a2a2a, -10px 10px 0 #1a1a1a;
+}
+
+/* ============================================ */
+/* DESCRIPCIÓN (Abajo del botón)                */
+/* ============================================ */
+.btn-description {
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 17px;
+    margin-top: 15px;
+    line-height: 1.5;
+    background: rgba(0,0,0,0.4);
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.game-card:hover .btn-description {
+    background: rgba(0,0,0,0.6);
+    transform: scale(1.02);
+}
+.texto-adicional{
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 17px;
+}
+/* ============================================ */
+/* RESPONSIVE (Para móviles)                    */
+/* ============================================ */
+@media (max-width: 900px) {
+    .cards-container {
+        gap: 20px;
+    }
+    
+    .game-card {
+        width: 250px;
+        padding: 15px;
+    }
+    
+    .game-title {
+        font-size: 36px;
+    }
+    
+    .subtitle {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 700px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .game-card {
+        width: 280px;
+    }
+}

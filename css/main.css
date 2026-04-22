@@ -1,0 +1,66 @@
+/* ESTILOS DEL CUERPO DE LA PÁGINA */
+body {
+    background-color: #a4dbf0;  /* Color de fondo azul cielo claro */
+    
+}
+
+/* ATRIBUTOS DEL TÍTULO PRINCIPAL (h1) */
+/*atributos del titulo*/
+h1 {
+    font-family: 'Lucida Handwriting', cursive;  /* Fuente cursiva con estilo elegante/manuscrito */
+    font-size: 48px;                              /* Tamaño de letra grande (48 píxeles) */
+    text-align: center;                           /* Centra el texto horizontalmente */
+    color: white;                                 /* Color blanco para el texto */
+    margin-bottom: 30px;                          /* Espacio inferior de 30px para separar del contenido siguiente */
+    text-shadow: 6px 6px 9px rgba(0, 0, 0, 0.6);  /* Sombra negra: 6px derecha, 6px abajo, 9px difuminado, 60% opacidad */
+}
+
+/* ESTILOS BASE DE LOS BOTONES */
+button { /*atributos del boton*/
+    font-family: 'Papyrus', fantasy;         /* Fuente con estilo antiguo/papiro (aspecto fantástico/medieval) */
+    background-color: #2d76c9;               /* Fondo azul medio */
+    color: white;                            /* Texto de color blanco */
+    padding: 12px 24px;                      /* Relleno interno: 12px arriba/abajo, 24px izquierda/derecha */
+    font-size: 16px;                         /* Tamaño de fuente de 16 píxeles */
+    border: none;                            /* Elimina el borde por defecto del botón */
+    border-radius: 5px;                      /* Bordes ligeramente redondeados (5px de radio) */
+    cursor: pointer;                         /* Cambia el cursor a forma de mano al pasar sobre el botón */
+    margin: 5px 0;                           /* Margen: 5px arriba/abajo, 0 izquierda/derecha */
+    width: 200px;                            /* Ancho fijo de 200 píxeles para todos los botones */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transiciones suaves para tamaño y color (0.3 segundos) */
+}
+
+/* EFECTO HOVER: Cuando el mouse pasa por encima del botón */
+button:hover {
+    transform: scale(1.06);      /* Aumenta el tamaño del botón un 6% (efecto de zoom) */
+    background-color: #164580;   /* Cambia el fondo a un azul más oscuro */
+}
+
+/* EFECTO ACTIVE: Cuando se hace clic en el botón (momento de presión) */
+button:active {
+    background-color: #2A6BB8;   /* Cambia a un azul intermedio durante el clic */
+}
+
+/* EFECTO NEÓN ESPECIAL (solo para botones con la clase 'btn-neon') */
+/*para que el boton sea neon*/
+.btn-neon:hover {
+    background: #00f2ff;         /* Fondo cambia a un azul cian brillante (color neón) */
+    color: #050801;              /* Texto cambia a negro muy oscuro (casi negro) */
+    box-shadow: 0 0 5px #1c5356,    /* Múltiples capas de sombra para crear efecto de brillo neón */
+                0 0 25px #20f4ff,   /* Cada capa aumenta el radio de difuminado */
+                0 0 50px #70e4ea,   /* El efecto simula un resplandor alrededor del botón */
+                0 0 200px #54f6ff;  /* La última capa crea un halo muy amplio */
+}
+
+/* ESTILOS PARA EL SPAN DENTRO DEL BOTÓN NEÓN (efecto decorativo) */
+.btn-neon span-neon {
+    position: absolute;  /* Posicionamiento absoluto (sale del flujo normal, se posiciona respecto al padre con position relative) */
+    display: block;      /* Se comporta como elemento de bloque (ocupa todo el ancho disponible) */
+}
+
+.img-decoracion{ 
+    width: 80%;              /* Ancho del 90% del contenedor */
+    max-width: 400px;        /* Ancho máximo de 400px */
+    margin: 20px auto;       /* Margen vertical 20px, centrado horizontal */
+    border-radius: 20px;     /* Bordes redondeados */
+}

@@ -1,0 +1,256 @@
+*{
+    box-sizing: border-box;
+}
+/* ESTILOS DEL CUERPO DE LA PÁGINA */
+body {
+    background-color: #a4dbf0;    
+}
+
+/* CONTENEDOR DEL MENÚ - Centra los elementos horizontalmente */
+.menu {
+    text-align: center;  /* Centra el texto y elementos inline dentro del menú */
+}
+
+/* ESTILOS DEL TÍTULO SECUNDARIO (h2) */
+h2 {
+    font-family: 'Lucida Handwriting', cursive;  /* Fuente cursiva elegante */
+    font-size: 48px;                              /* Tamaño de letra grande */
+    text-align: center;                           /* Centra el texto */
+    color: white;                                 /* Texto blanco */
+    margin-bottom: 30px;                          /* Espacio inferior de 30px */
+    text-shadow: 6px 6px 9px rgba(0, 0, 0, 0.6);  /* Sombra negra desplazada 6px hacia abajo/derecha con difuminado */
+}
+
+/* CLASE PARA ANIMAR LA SOMBRA DEL TEXTO (efecto danzante) */
+.shadow-dance {
+  animation: shadow-dance 1.5s infinite;  /* Aplica animación que dura 1.5s y se repite infinitamente */
+}
+
+/* ANIMACIÓN: La sombra del texto cambia de color y posición (rojo → azul → rojo) */
+@keyframes shadow-dance {
+  0% { text-shadow: 2px 2px 5px red; }      /* Inicio: sombra roja hacia abajo-derecha */
+  50% { text-shadow: -2px -2px 5px blue; }  /* Mitad: sombra azul hacia arriba-izquierda */
+  100% { text-shadow: 2px 2px 5px red; }    /* Final: vuelve a sombra roja */
+}
+
+/* ESTILOS BASE DE LOS BOTONES */
+button { /*atributos del boton*/
+    font-family: 'Papyrus', fantasy;         /* Fuente con estilo de papiro/antiguo */
+    background-color: #7a1063;               /* Fondo morado oscuro */
+    color: white;                            /* Texto blanco */
+    padding: 12px 24px;                      /* Relleno interno: 12px arriba/abajo, 24px laterales */
+    font-size: 16px;                         /* Tamaño de fuente */
+    border: none;                            /* Sin borde */
+    border-radius: 5px;                      /* Bordes ligeramente redondeados */
+    cursor: pointer;                         /* Cursor tipo mano al pasar por encima */
+    margin: 5px 0;                           /* Margen vertical de 5px, horizontal 0 */
+    width: 200px;                            /* Ancho fijo de 200px */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transiciones suaves para tamaño y color */
+}
+
+/* EFECTO HOVER: Cuando el mouse pasa sobre el botón */
+button:hover {
+    transform: scale(1.06);      /* Aumenta tamaño un 6% */
+    background-color: #721359;   /* Cambia a un morado ligeramente más oscuro */
+}
+
+/* EFECTO ACTIVE: Cuando se hace clic en el botón */
+button:active {
+    background-color: #d337d1;   /* Cambia a un rosa/morado más claro (efecto de presión) */
+}
+
+/* EFECTO NEÓN ESPECIAL (solo para botones con clase 'btn-neon') */
+/*para que el boton sea neon*/
+.btn-neon:hover {
+    background: #da15ac;          /* Fondo rosa intenso */
+    color: #fefffd;               /* Texto blanco */
+    box-shadow: 0 0 5px #6e205c,  /* Múltiples capas de sombra para crear efecto neón */
+                0 0 25px #e3b7da,
+                0 0 50px #ffcef3,
+                0 0 200px #ffe6f9;
+}
+
+/* ESTILOS PARA SPAN DENTRO DEL BOTÓN NEÓN (posición absoluta no definida completamente) */
+.btn-neon span-neon {
+    position: absolute;  /* Posicionamiento absoluto respecto al contenedor con position relative */
+    display: block;      /* Se comporta como bloque (ocupa todo el ancho disponible) */
+}
+
+/* BOTONES CON ESTILO "VOLVER ATRÁS" (efecto vidrio/transparente) */
+/*botones de seleccion*/
+.buttons-back {
+    width: 220px;                               /* Ancho fijo */
+    padding: 12px 24px;                         /* Relleno interno */
+    margin: 10px;                               /* Margen exterior */
+    font-size: 1.1rem;                          /* Tamaño de fuente ligeramente mayor */
+    font-weight: bold;                          /* Texto en negrita */
+    color: white;                               /* Texto blanco */
+    background: rgba(255,255,255,0.1);          /* Fondo blanco semi-transparente (10% opacidad) */
+    border: 2px solid white;                    /* Borde blanco sólido */
+    border-radius: 30px;                        /* Bordes muy redondeados (efecto píldora) */
+    cursor: pointer;                            /* Cursor tipo mano */
+    transition: all 0.3s;                       /* Transición suave para todas las propiedades */
+}
+
+/* Hover para botones de volver */
+.buttons-back:hover {
+    background: rgb(229, 226, 226);  /* Fondo gris claro */
+    color: #2b1055;                  /* Texto azul/morado oscuro */
+    transform: scale(1.05);          /* Aumenta tamaño 5% */
+    box-shadow: 0 0 20px rgba(255,255,255,0.5); /* Brillo blanco alrededor */
+}
+
+/* Active para botones de volver (efecto clic) */
+.buttons-back:active {
+    transform: scale(0.95);  /* Reduce tamaño 5% al hacer clic */
+}
+
+/* MEDIA QUERY: Pantallas de hasta 600px (móviles) */
+@media (max-width: 600px) {
+    h1 { font-size: 2rem; }                              /* Reduce tamaño del h1 */
+    .buttons-back { width: 180px; padding: 10px 20px; }  /* Botones más pequeños */
+}
+
+/* CONTENEDOR TIPO CARTA (estilo rosa/coral) */
+/*formato carta*/
+.recuadro {
+    text-align: justify;                    /* Texto justificado (alineado a ambos lados) */
+    font-size: 17px;                        /* Tamaño de fuente legible */
+    background-color: #F9BDC4;              /* Fondo rosa claro */
+    color: #690914;                         /* Texto rojo oscuro/burdeos */
+    padding: 30px;                          /* Relleno interno de 30px */
+    width: 90%;                             /* Ancho del 90% del contenedor padre */
+    max-width: 1000px;                      /* Ancho máximo de 1000px (no crece más) */
+    display: block;                         /* Se comporta como bloque */
+    margin: 20px auto;                      /* Margen vertical 20px, horizontal automático (centrado) */
+    border-radius: 20px;                    /* Bordes redondeados */
+    box-shadow: 0 20px 25px rgba(0,0,0,0.2); /* Sombra suave para dar profundidad */
+}
+
+/* CONTENEDOR TIPO CARTA (estilo azul) - similar al anterior pero con colores azules */
+.recuadro2 {
+    text-align: justify;                    /* Texto justificado */
+    font-size: 17px;                        /* Tamaño de fuente */
+    background-color: #8bcef5;              /* Fondo azul claro */
+    color: #091b69;                         /* Texto azul oscuro */
+    padding: 30px;                          /* Relleno interno */
+    width: 90%;                             /* Ancho relativo */
+    max-width: 1000px;                      /* Ancho máximo */
+    display: block;                         /* Bloque */
+    margin: 20px auto;                      /* Centrado horizontal */
+    border-radius: 20px;                    /* Bordes redondeados */
+    box-shadow: 0 20px 25px rgba(0,0,0,0.2); /* Sombra suave para dar profundidad */
+}
+
+/* CONTENEDOR FLEXIBLE para alinear elementos en fila */
+.contenedor {
+    display: flex;           /* Activa Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    gap: 5px;                /* Espacio de 5px entre elementos hijos */
+}
+
+/* ESTILOS PARA IMÁGENES */
+/* PRIMERA IMAGEN - desplazada hacia la derecha */
+.img1 {
+    position: relative;      /* Posicionamiento relativo (se mueve respecto a su lugar original) */
+    right: -10px;            /* Mueve la imagen 10px a la derecha (valor positivo con right = mover derecha) */
+    height: 600px;           /* Altura fija de 600px */
+}
+
+/* SEGUNDA IMAGEN - sin desplazamiento horizontal notable */
+.img2 {
+   position: relative;       /* Posicionamiento relativo */
+    width: 190px;            /* Ancho fijo de 190px */
+    height: 600px;           /* Altura fija de 600px */
+}
+
+/* TERCERA IMAGEN - desplazada hacia la izquierda */
+.img3 {
+   position: relative;       /* Posicionamiento relativo */
+    left: -10px;             /* Mueve la imagen 10px a la izquierda */
+    width: 190px;            /* Ancho fijo */
+    height: 600px;           /* Altura fija */
+}
+
+/* IMAGEN DENTRO DE UNA CARTA (responsive) */
+.imagen-carta {
+    width: 90%;              /* Ancho del 90% del contenedor */
+    max-width: 400px;        /* Ancho máximo de 400px */
+    margin: 20px auto;       /* Margen vertical 20px, centrado horizontal */
+    border-radius: 20px;     /* Bordes redondeados */
+}
+
+
+.recuadro3 {
+    position: relative;       /* Posicionamiento relativo */
+    text-align: justify;                    /* Texto justificado */
+    font-size: 17px;                        /* Tamaño de fuente */
+    background-color: #e7f58b;              /* Fondo azul claro */
+    color: #8d6717;                         /* Texto azul oscuro */
+    padding: 20px;                          /* Relleno interno */
+    width: 20%;                             /* Ancho relativo */
+    height: 100px; 
+    max-width: 1000px;                      /* Ancho máximo */
+    display: block;                         /* Bloque   margin: 20px auto;   Centrado horizontal */
+    align-items: right;     /* Centra verticalmente */
+    border-radius: 20px;                    /* Bordes redondeados */
+}
+/* Contenedor principal que agrupa todas las filas de botones */
+.container {
+    display: flex;           /* Activa Flexbox para layout flexible */
+    flex-direction: column;  /* Organiza los elementos hijos en columna (vertical) */
+    gap: 15px;              /* Espacio de 15px entre cada fila (hijo directo) */
+    padding: 20px;          /* Relleno interior de 20px en todos los lados */
+}
+
+/* Cada fila individual que contiene los botones */
+.row {
+    display: flex;          /* Activa Flexbox para esta fila */
+    gap: 15px;             /* Espacio de 15px entre cada botón dentro de la fila */
+}
+
+/* Estilos base para los botones (clase .button2) */
+.button2 {
+    padding: 12px 24px;     /* Relleno: 12px arriba/abajo, 24px izquierda/derecha */
+    background-color: #3498db; /* Color de fondo azul */
+    color: white;           /* Texto de color blanco */
+    border: none;           /* Elimina el borde por defecto del botón */
+    border-radius: 5px;     /* Bordes ligeramente redondeados (5px) */
+    cursor: pointer;        /* Cambia el cursor a mano al pasar sobre el botón */
+    font-size: 16px;        /* Tamaño de fuente de 16px */
+    transition: all 0.3s ease; /* Transición suave para todas las propiedades (0.3 segundos) */
+}
+
+/* Efecto hover (al pasar el mouse) para botones con clase .button */
+/* NOTA: Esto afecta a .button, pero las clases definidas arriba son .button2 */
+.button:hover {
+    background-color: #2980b9; /* Cambia el fondo a un azul más oscuro */
+    transform: translateY(-2px); /* Eleva el botón 2px hacia arriba (efecto flotante) */
+}
+
+/* ============================================ */
+/* ESCALERA DE IZQUIERDA A DERECHA */
+/* ============================================ */
+
+/* Primera fila: desplazada 290px desde la izquierda */
+.row-1 { 
+    margin-left: 290px;     /* Margen izquierdo de 290px */
+}
+/* Segunda fila: desplazada 390px desde la izquierda (100px más que row-1) */
+.row-2 { 
+    margin-left: 390px;     /* Margen izquierdo de 390px */
+}
+/* Tercera fila: desplazada 490px desde la izquierda (100px más que row-2) */
+.row-3 { 
+    margin-left: 490px;     /* Margen izquierdo de 490px */
+}
+/* Cuarta fila: desplazada 590px desde la izquierda (100px más que row-3) */
+.row-4 { 
+    margin-left: 590px;     /* Margen izquierdo de 590px */
+}
+/* Quinta fila: desplazada 690px desde la izquierda (100px más que row-4) */
+.row-5 { 
+    margin-left: 690px;     /* Margen izquierdo de 690px */
+}
+

@@ -1,0 +1,75 @@
+/* RESET BÁSICO: Elimina márgenes y paddings por defecto que los navegadores aplican */
+* {
+    margin: 0;           /* Elimina margen exterior de todos los elementos */
+    padding: 0;          /* Elimina relleno interior de todos los elementos */
+    box-sizing: border-box; /* Hace que el ancho/alto incluyan borde y relleno, no solo el contenido */
+}
+
+/* ESTILOS DEL CUERPO DE LA PÁGINA */
+body {
+    font-family: 'Lucida Handwriting', cursive;  /* Define la fuente principal (cursiva elegante) */
+    height: 100vh;                               /* Altura = 100% del viewport (pantalla visible) */
+    background: linear-gradient(45deg, #a53805, #cc9a27); /* Fondo con degradado diagonal de azul oscuro a azul medio */
+    display: flex;                               /* Activa Flexbox para alinear elementos */
+    justify-content: center;                     /* Centra horizontalmente el contenido */
+    align-items: center;                         /* Centra verticalmente el contenido */
+}
+
+/* CONTENEDOR DEL MENÚ */
+.menu {
+    text-align: center;      /* Centra todo el texto dentro del menú (h1 y botones) */
+}
+
+/* ESTILOS DEL TÍTULO PRINCIPAL */
+h1 {
+    font-size: 3.5rem;                          /* Tamaño de fuente grande (3.5 veces el tamaño base) */
+    color: white;                               /* Color blanco para el texto */
+    margin-bottom: 40px;                        /* Espacio inferior para separar del resto */
+    text-shadow: 0 0 10px rgba(255,255,255,0.5); /* Sombra blanca difuminada para efecto de brillo */
+    animation: float 3s ease-in-out infinite;   /* Aplica animación 'float' que dura 3s y se repite infinito */
+}
+
+/* ANIMACIÓN: Hace que el título flote suavemente arriba y abajo */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }      /* Al inicio y final: posición normal */
+    50% { transform: translateY(-10px); }       /* A la mitad: sube 10px hacia arriba */
+}
+
+/* ESTILOS DE LOS BOTONES */
+button {
+    width: 220px;                               /* Ancho fijo de 220 píxeles */
+    padding: 12px 24px;                         /* Relleno interno: 12px arriba/abajo, 24px izquierda/derecha */
+    margin: 10px;                               /* Margen exterior de 10px alrededor de cada botón */
+    font-size: 1.1rem;                          /* Tamaño de fuente ligeramente más grande que el normal */
+    font-weight: bold;                          /* Texto en negrita */
+    color: white;                               /* Texto blanco */
+    background: rgba(255,255,255,0.1);          /* Fondo blanco con 10% de opacidad (semi-transparente) */
+    border: 2px solid white;                    /* Borde blanco sólido de 2 píxeles */
+    border-radius: 30px;                        /* Bordes redondeados (efecto de píldora) */
+    cursor: pointer;                            /* Cambia el cursor a "mano" al pasar sobre el botón */
+    transition: all 0.3s;                       /* Suaviza cualquier cambio de propiedad durante 0.3 segundos */
+}
+
+/* EFECTO HOVER: Cuando el mouse pasa sobre el botón */
+button:hover {
+    background: white;                          /* Fondo cambia a blanco sólido */
+    color: #2b1055;                             /* Texto cambia a azul oscuro/morado */
+    transform: scale(1.05);                     /* Aumenta el tamaño del botón un 5% */
+    box-shadow: 0 0 20px rgba(255,255,255,0.5); /* Añade brillo blanco difuminado alrededor */
+}
+
+/* EFECTO ACTIVE: Cuando se hace clic en el botón */
+button:active {
+    transform: scale(0.95);      /* Reduce el tamaño un 5% para dar sensación de presión al hacer clic */
+}
+
+/* MEDIA QUERY: Estilos específicos para pantallas de hasta 600px de ancho (móviles/tablets pequeñas) */
+@media (max-width: 600px) {
+    h1 { 
+        font-size: 2rem;         /* Reduce el tamaño del título para que quepa en pantallas pequeñas */
+    }
+    button { 
+        width: 180px;            /* Botones más angostos */
+        padding: 10px 20px;      /* Reduce el relleno interno */
+    }
+}
